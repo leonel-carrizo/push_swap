@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/13 13:51:15 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/02/13 19:28:31 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,15 @@
 # include <stdio.h>
 # include <limist.h>
 
-void	push_swap();
+// structs
+typedef struct s_list
+{
+	int			n;
+	struct s_stack *next;
+}			t_list;
 
+
+// functions
+void	push_swap();
 
 #endif
