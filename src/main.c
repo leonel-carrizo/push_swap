@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 21:24:32 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/16 21:40:46 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/02/16 22:39:34 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,15 @@
 
 int	main(int argc, char *argv[])
 {
-	if (argc < 2 || !argv[1])
-		return (-1);
-	if (argc >= 2)
-	{
-		printf("hola");
-	}
+	t_stack	*a;
+	t_stack	*b;
+
+	if (argc < 2 || (arc == 2 && !argv[1][0]))
+		return (1);
+	else if (argc == 2)
+		add_to_stack(&a, argv + 1);
+	if (!is_sorted(a))
+		push_swap(&a, &b)
 
 	return (0);
 }
