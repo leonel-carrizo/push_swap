@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/13 13:47:10 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/16 21:26:22 by lcarrizo         ###   ########.fr       */
+/*   Created: 2024/02/16 21:33:53 by lcarrizo          #+#    #+#             */
+/*   Updated: 2024/02/16 21:36:49 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
-void	push_swap(t_stack **a, t_stack **b)
+void	ft_error(void)
 {
-		
+	write(1, "Error\n", 6);
 }
