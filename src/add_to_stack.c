@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   add_to_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 18:59:42 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/19 21:31:22 by lcarrizo          ###   ##london.com     */
+/*   Created: 2024/02/19 18:56:19 by lcarrizo          #+#    #+#             */
+/*   Updated: 2024/02/19 21:31:16 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	main(int argc, char *argv[])
+/* add the number given as arguments and to the stack */
+void	add_to_stack(s_stack **a, char **argv)
 {
-	t_stack	*a;
-	t_stack	*b;
+	// verify error:
+	// 	errores de sintaxis (letras).
+	// 	no hay numeros.
+	// 	numeros repetidos.
+	//	un elemento es mas grande que un INT_MAX / INT_MIN
+	// convertirlo a un numero entero (ft_atol.c)
+	// agregar los numero uno por uno en un node del stack.
 
-	if (argc < 2 || (arc == 2 && !argv[1][0]))
-		return (1);
-	// if the argumente is given with '" "' split it by spaces.
-	else if (argc == 2)
-		//argv is changed for array of nubers.
-		argv = ft_split(argv[1], ' ');
-	// if there are a list of argv add to stack.
-	add_to_stack(&a, argv + 1);
-	if (!is_sorted(a))
-	{
-
-		push_swap(&a, &b)
-	}
-	// free stacks.
-	return (0);
 }
