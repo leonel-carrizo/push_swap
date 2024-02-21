@@ -6,7 +6,7 @@
 /*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 16:14:13 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/12/02 01:43:33 by lcarrizo         ###   ###.london.com    */
+/*   Updated: 2024/02/19 20:42:06 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ static char	**get_substr(const char *str, char c, char **array, size_t nsub)
 	return (array);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	char	**array;
 	size_t	num_substr;
