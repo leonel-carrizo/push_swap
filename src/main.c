@@ -17,7 +17,7 @@ int	main(int argc, char *argv[])
 	t_stack	*a;
 	t_stack	*b;
 
-	if (argc < 2 || (arc == 2 && !argv[1][0]))
+	if (argc < 2 || (argc == 2 && !argv[1][0]))
 		return (1);
 	// if the argumente is given with '" "' split it by spaces.
 	else if (argc == 2)
@@ -28,7 +28,7 @@ int	main(int argc, char *argv[])
 	if (!is_sorted(a))
 	{
 
-		push_swap(&a, &b)
+		push_swap(&a, &b);
 	}
 	// free stacks.
 	return (0);
