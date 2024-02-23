@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/22 21:17:57 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/02/23 13:32:49 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int check_errors(t_stack **a, char **argv);
 // rotate nodes
 // push nodes stack to stack 
 
-
+//helpers
+void	print_stack(t_stack *stack);
 
 #endif
