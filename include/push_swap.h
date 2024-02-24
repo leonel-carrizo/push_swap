@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/23 13:32:49 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/02/24 19:30:08 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void 	add_to_stack(t_stack **a, char **argv);
 int	is_sorted(t_stack *a);
 
 // error managements
-void	ft_error(void);
-int check_errors(t_stack **a, char **argv);
+void	error_message(const char *message);
+int	check_errors(char **argv);
 // stack lenght
 // how many elements in the stack
 // are the elements sorted?
@@ -46,5 +46,6 @@ int check_errors(t_stack **a, char **argv);
 
 //helpers
 void	print_stack(t_stack *stack);
+void	ft_printarg(char **argv);
 
 #endif
