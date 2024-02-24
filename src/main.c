@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:59:42 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/23 13:33:22 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/02/24 16:12:02 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	main(int argc, char *argv[])
 		//argv is changed for array of nubers.
 		argv = ft_split(argv[1], ' ');
 	// if there are a list of argv add to stack.
-	print_stack(*a)	
-//	add_to_stack(&a, argv + 1);
+	add_to_stack(&a, argv + 1);
+//	print_stack(*a)	
 //	if (!is_sorted(a))
 //	{
 //

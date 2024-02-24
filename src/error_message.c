@@ -6,13 +6,16 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 21:33:53 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/16 21:36:49 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/02/24 19:27:43 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_error(void)
+void	ft_error(const char *message)
 {
-	write(1, "Error\n", 6);
+	int	len;
+
+	len = ft_strlen(message);
+	write(1, message, len);
 }

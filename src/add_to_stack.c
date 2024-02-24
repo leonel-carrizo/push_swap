@@ -6,19 +6,28 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:56:19 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/22 09:15:46 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/02/24 21:18:46 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/* create a new node and return a pointer to it */
+
+
 /* add the number given as arguments and to the stack */
 void	add_to_stack(s_stack **a, char **argv)
 {
 	int	i;
-	if (a && argv)
-	// verify error:
-	check_errors(a, argv);
+	if (!argv)
+		return ;
+		// verify error:
+	if (check_errors(argv))
+	{
+		error_message("Error");
+		// free if allocated something.
+		return ;
+	}
 	i = 0;
 	while (argv)
 	{
