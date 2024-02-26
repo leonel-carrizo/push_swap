@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 21:29:51 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/26 21:29:55 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/02/26 22:32:02 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@ static int	wrong_sintax(char **argv)
 	j = 0;
 	while (argv[j])
 	{
-		if !((argv[j] == '-' || argv[j] == '+') || (argv >='0' && argv == '9'))
+		if (!(*argv[j] == '-' || *argv[j] == '+'
+			|| (*argv[j] >= '0' && *argv[j] == '9')))
 			return (1);
 		i = 0;
 		if (*argv[i] == '+' || *argv[i] == '-' )
 			++i;
 		while (*argv[i])
 		{
-			if (*argv[i] < '0' || *argv[i] > '9'')
+			if (*argv[i] < '0' || *argv[i] > '9')
 				return (1);
 			++i;
 		}
@@ -42,6 +43,7 @@ int	check_errors(char **argv)
 {
 	int	i;
 	int	j;
+
 	if (wrong_sintax(argv))
 		return (1);
 	i = 0;
@@ -51,7 +53,7 @@ int	check_errors(char **argv)
 		while (argv[j])
 		{
 			if (ft_strcmp(argv[i], argv[j]) == 0)
-					return (1);
+				return (1);
 			j++;
 		}
 		i++;

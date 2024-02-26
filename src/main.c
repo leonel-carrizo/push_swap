@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:59:42 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/24 16:12:02 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/02/26 22:14:29 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char *argv[])
 		argv = ft_split(argv[1], ' ');
 	// if there are a list of argv add to stack.
 	add_to_stack(&a, argv + 1);
-//	print_stack(*a)	
+	print_stack(a);
 //	if (!is_sorted(a))
 //	{
 //
