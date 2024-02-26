@@ -6,11 +6,30 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:56:19 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/24 21:18:46 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/02/26 20:21:45 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+/*·check·if·an·argument·is·dnferent·than·an·Integer·*/↓
+static int	not_integer(char *argv)
+{
+	int	i;
+	long	value;
+
+	if (!*argv)
+		return (0);
+	i = 0;
+	while (argv)
+	{
+		value = ft_atol(argv[i]);
+		if (value < INT_MIN || value > INT_MAX)
+			return(1);
+		i++;
+	}
+	return (0);
+}
 
 /* create a new node and return a pointer to it */
 

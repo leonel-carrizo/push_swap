@@ -1,37 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   check_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 09:07:07 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/24 18:22:42 by lcarrizo         ###   ########.fr       */
+/*   Created: 2024/02/26 21:29:51 by lcarrizo          #+#    #+#             */
+/*   Updated: 2024/02/26 21:29:55 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
-#inlcude "../include/push_swap.h"
+#include "../include/push_swap.h"
 
-static	int	are_duplicates(char **argv)
-{
-
-	return ();
-}
-
-static int	not_integer(char *argv)
-{
-	int	i;
-	long	value;
-
-	if (!*argv)
-		return (0);
-	i = 0;
-	while (argv[i])
-	{
-		value = ft_atol(argv[i]);
-		if (value )
-	}
-	return ();
-}
-
+/* check if the arguments are not value number, if true return 1 otherwise 0 */
 static int	wrong_sintax(char **argv)
 {
 	int	i;
@@ -56,21 +37,24 @@ static int	wrong_sintax(char **argv)
 	return (0);
 }
 
+/* grap to check error in the arguments given to the program */
 int	check_errors(char **argv)
 {
 	int	i;
-	// sintax errors, there are chars insted of numbers
+	int	j;
 	if (wrong_sintax(argv))
 		return (1);
-	// there are not numbers
 	i = 0;
-	while (*argv[i])
+	while (argv[i])
 	{
-		if(not_integer(*argv[i]))
-			return (1);
+		j = i + 1;
+		while (argv[j])
+		{
+			if (ft_strcmp(argv[i], argv[j]) == 0)
+					return (1);
+			j++;
+		}
 		i++;
 	}
-	// number are twist
-	// number different than INT_MAX / INT_MIN
 	return (0);
 }
