@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/26 22:37:37 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/02/27 13:44:43 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	check_errors(char **argv);
 // how many elements in the stack
 // are the elements sorted?
 // clean node
+void	clean_stack(t_stack **stack);
 // swap nodes
 // rotate nodes
 // push nodes stack to stack
