@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 21:29:51 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/27 22:19:15 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/02/28 12:38:24 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ static int	wrong_sintax(char **argv)
 	j = 0;
 	while (argv[j])
 	{
-		if (!(*argv[j] == '-' || *argv[j] == '+' 
-		|| (*argv[j] >= '0' && *argv[j] <= '9')))
+		if (!(*argv[j] == '-' || *argv[j] == '+'
+			|| (*argv[j] >= '0' && *argv[j] <= '9')))
 			return (1);
 		i = 0;
-		if (*argv[i] == '+' || *argv[i] == '-' )
+		if (*argv[j] == '+' || *argv[j] == '-' )
 			++i;
 		while (argv[j][i])
 		{

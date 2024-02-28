@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:56:19 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/27 21:58:07 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/02/28 13:29:09 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,30 +56,44 @@ void	add_node(t_stack **stack, int value)
 	}
 }
 
+/* convert arg in INT into an array, check valid  numbers */
+static int	*get_numbers(char **argv)
+{
+	int	i;
+	long	*num;
+
+	i = 0;
+	while (argv[i])
+	{
+		num[i] = ft_atol(argv[i]);
+		if (num[i] < INT_MIN || num[i] > INT_MAX)
+		{
+			error_message("Error");
+			exit(EXIT_FAILURE);
+		}
+		i++;
+	}
+	return ((int *)num);
+}
+
 /* add the number given as arguments and to the stack */
 void	add_to_stack(t_stack **a, char **argv)
 {
 	int		i;
-	long	nbr;
+	int	*nbrs;
 
 	if (check_errors(argv))
 	{
 		error_message("Error");
-		return ;
+		exit(EXIT_FAILURE) ;
 	}
 	i = 0;
-	if (!is_sorted(argv))
+	nbrs = get_numbers(argv);
+	if (!is_sorted(nbrs))
 	{
-		while (argv[i])
+		while (nbrs[i])
 		{
-			nbr = ft_atol(argv[i]);
-			if (nbr < INT_MIN || nbr > INT_MAX)
-			{
-				clean_stack(a);
-				error_message("Error");
-				return ;
-			}
-			add_node(a, nbr);
+			add_node(a, nbrs[i]);
 			i++;
 		}
 	}
