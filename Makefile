@@ -6,7 +6,7 @@
 #    By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/23 11:13:45 by lcarrizo          #+#    #+#              #
-#    Updated: 2024/02/28 22:06:50 by lcarrizo         ###   ########.fr        #
+#    Updated: 2024/03/01 19:34:17 by lcarrizo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ $(LIBFT):
 		@make -C $(LIBFT_DIR)
 
 $(NAME):	$(OBJ) $(LIBFT)
-		$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
+		$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME) -g
 
 $(OBJ_DIR)%.o:	$(SRC_DIR)%.c
 		@mkdir -p $(OBJ_DIR)
@@ -49,12 +49,12 @@ $(OBJ_DIR)%.o:	$(SRC_DIR)%.c
 clean:		
 		$(RM) $(OBJ_DIR)
 		@make -C $(LIBFT_DIR) clean
-		@echo "** clean **"
+		@echo "** clean done!**"
 		
 fclean:		clean
 		$(RM) $(NAME)
 		@make -C $(LIBFT_DIR) fclean
-		@echo "** full clean **"
+		@echo "** full clean done!**"
 
 re:		fclean all
 

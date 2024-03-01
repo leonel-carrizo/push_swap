@@ -6,14 +6,14 @@
 #    By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 03:19:48 by lcarrizo          #+#    #+#              #
-#    Updated: 2024/02/28 21:30:27 by lcarrizo         ###   ########.fr        #
+#    Updated: 2024/03/01 19:32:55 by lcarrizo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ############################    SRCS/DIRECTORES   #############################
 
 NAME		= libft.a
-HEADER		= -I ./
+HEADER		= -I ./libft.h
 SRC		= ft_putnbr_fd.c ft_atoi.c ft_bzero.c ft_calloc.c \
 		ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 		ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
@@ -23,10 +23,11 @@ SRC		= ft_putnbr_fd.c ft_atoi.c ft_bzero.c ft_calloc.c \
 		ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
 		ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c \
 		ft_toupper.c ft_atol.c ft_strcmp.c
+OBJ_DIR		= abj/
 
-OBJ		= $(SRC:.c=.o)
+OBJ		= $(addprefix $(OBJ_DIR),$(notdir $(SRC:.c=.o)))
 
-#############################    VARIABLES   ##################################
+#############################      RULES    ##################################
 
 CC		= cc
 RM 		= rm -fr
@@ -41,20 +42,23 @@ AR		= ar rcs
 
 #############################    TARGETS    ##################################
 
-$(NAME):	$(OBJ)
-		$(CC) $(CFLAGS) $(OPT) $(SRC)
-		$(AR) $(NAME) $(OBJ) 
-
 all:		$(NAME)
 
+$(NAME):	$(OBJ)
+		$(AR) $(NAME) $(OBJ)
+
+$(OBJ_DIR)%.o:	%.c
+		@mkdir -p $(OBJ_DIR)
+		$(CC) $(CFLAGS) $(OPT) $< -o $@
+
 clean:		
-		$(RM) $(OBJ) 
+		$(RM) $(OBJ_DIR) 
 		@echo "** clean **"
-		
+
 fclean:		clean
 		$(RM) $(NAME)
 		@echo "** full clean **"
 
 re:		fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

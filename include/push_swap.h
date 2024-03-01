@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/28 21:56:34 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/01 18:13:48 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@ typedef struct s_stack
 // functions
 int	main(int argc, char **argv);
 void	push_swap(t_stack **a, t_stack **b);
-void 	add_to_stack(t_stack **a, char **argv);
+void 	add_to_stack(t_stack **a, char **argv, int argc);
 void	add_node(t_stack **stack, int value);
 int	is_sorted(int *nbrs);
+int     *get_numbers(char **argv, int argc);
 
 // error managements
 void	error_message(const char *message);

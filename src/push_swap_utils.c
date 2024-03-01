@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:19:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/28 13:29:38 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/03/01 18:16:51 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	is_sorted(int *nbrs)
 {
 	int	i;
 
-	if (!argv)
+	if (!nbrs)
 		return (0);
 	i = 0;
 	while (nbrs[i] && nbrs[i + 1])

@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:59:42 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/27 21:56:17 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/03/01 18:16:03 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int	main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		argv = ft_split(argv[1], ' ');
-		add_to_stack(&a, argv);
+		add_to_stack(&a, argv, argc);
 	}
 	else if (argc > 2)
-		add_to_stack(&a, argv + 1);
+		add_to_stack(&a, argv + 1, argc);
 	if (a)
 	{
 		push_swap(&a, &b);
