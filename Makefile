@@ -6,7 +6,7 @@
 #    By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/23 11:13:45 by lcarrizo          #+#    #+#              #
-#    Updated: 2024/03/01 19:34:17 by lcarrizo         ###   ########.fr        #
+#    Updated: 2024/03/02 01:09:40 by lcarrizo          ###   ##london.com      #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,12 +49,12 @@ $(OBJ_DIR)%.o:	$(SRC_DIR)%.c
 clean:		
 		$(RM) $(OBJ_DIR)
 		@make -C $(LIBFT_DIR) clean
-		@echo "** clean done!**"
+		@echo "** clean push_swap done!**"
 		
 fclean:		clean
 		$(RM) $(NAME)
 		@make -C $(LIBFT_DIR) fclean
-		@echo "** full clean done!**"
+		@echo "** full clean push_swap done!**"
 
 re:		fclean all
 

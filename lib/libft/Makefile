@@ -6,7 +6,7 @@
 #    By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 03:19:48 by lcarrizo          #+#    #+#              #
-#    Updated: 2024/03/01 19:32:55 by lcarrizo         ###   ########.fr        #
+#    Updated: 2024/03/02 01:08:55 by lcarrizo          ###   ##london.com      #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,11 +53,11 @@ $(OBJ_DIR)%.o:	%.c
 
 clean:		
 		$(RM) $(OBJ_DIR) 
-		@echo "** clean **"
+		@echo "** clean libft done!**"
 
 fclean:		clean
 		$(RM) $(NAME)
-		@echo "** full clean **"
+		@echo "** full clean libft done!**"
 
 re:		fclean all
 
