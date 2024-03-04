@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:19:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/01 18:16:51 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/04 13:44:52 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,32 @@
 int	is_sorted(int *nbrs)
 {
 	int	i;
+	int	*temp;
 
 	if (!nbrs)
 		return (0);
 	i = 0;
-	while (nbrs[i] && nbrs[i + 1])
+	temp = nbrs;
+	while (temp[i])
 	{
-		if (nbrs[i] > nbrs[i + 1])
+		if (temp[i] > nbrs[i + 1])
 			return (0);
 		i++;
 	}
 	return (1);
 }
+
+/* Check how many elements are in an array */
+int	array_elements(char **argv)
+{
+	int	num;
+
+	num = 0;
+	while (*argv)
+	{
+		argv++;
+		num++;
+	}
+	return (num);
+}
+

@@ -6,7 +6,7 @@
 #    By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/23 11:13:45 by lcarrizo          #+#    #+#              #
-#    Updated: 2024/03/02 01:09:40 by lcarrizo          ###   ##london.com      #
+#    Updated: 2024/03/04 10:20:39 by lcarrizo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,6 @@ INCLUDE		= ./include/
 SRC_DIR		= src/
 OBJ_DIR		= obj/
 SRCS		= $(wildcard $(SRC_DIR)*.c)
-#SRCS		= $(SRC_DIR)add_to_stack.c $(SRC_DIR)add_to_stack.c \
-#		  $(SRC_DIR)check_errors.c $(SRC_DIR)error_message.c \
-#		  $(SRC_DIR)print_stack.c $(SRC_DIR)push_swap.c \
-#		  $(SRC_DIR)push_swap_utils.c $(SRC_DIR)main.c
 OBJ		= $(addprefix $(OBJ_DIR), $(notdir $(SRCS:.c=.o)))
 
 #############################    VARIABLES   ##################################

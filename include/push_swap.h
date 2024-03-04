@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/01 18:13:48 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/04 11:34:38 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void 	add_to_stack(t_stack **a, char **argv, int argc);
 void	add_node(t_stack **stack, int value);
 int	is_sorted(int *nbrs);
 int     *get_numbers(char **argv, int argc);
+int	array_elements(char **argv);
 
 // error managements
 void	error_message(const char *message);

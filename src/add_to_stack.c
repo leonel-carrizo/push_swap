@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:56:19 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/01 18:15:08 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/04 13:33:50 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ void	add_node(t_stack **stack, int value)
 int	*get_numbers(char **argv, int argc)
 {
 	int	i;
-	int	num[argc];
-	int	*temp;
+	int	num[argc + 1];
+	static int	*temp;
 
 	i = 0;
 	while (argv[i])
@@ -74,6 +74,7 @@ int	*get_numbers(char **argv, int argc)
 		}
 		i++;
 	}
+	num[i] = '\0';
 	temp = num;
 	return (temp);
 }
@@ -93,7 +94,7 @@ void	add_to_stack(t_stack **a, char **argv, int argc)
 	nbrs = get_numbers(argv, argc);
 	if (!is_sorted(nbrs))
 	{
-		while (nbrs[i])
+		while (i < argc)
 		{
 			add_node(a, nbrs[i]);
 			i++;

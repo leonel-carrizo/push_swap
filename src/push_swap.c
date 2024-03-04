@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:10 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/01 18:00:06 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/04 13:14:29 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void	push_swap(t_stack **a, t_stack **b)
 {
 	if (!*b)
-		printf("ajaaaa");
+		printf("push swap :-p");
 	print_stack(*a);
 }
