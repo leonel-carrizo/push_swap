@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:56:19 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/04 13:33:50 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/06 04:37:39 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,42 +57,45 @@ void	add_node(t_stack **stack, int value)
 }
 
 /* convert arg in INT into an array, check valid  numbers */
-int	*get_numbers(char **argv, int argc)
+long	*get_numbers(char **argv, int argc)
 {
 	int	i;
-	int	num[argc + 1];
-	static int	*temp;
+	long	*num;
 
+	num = NULL;
+	num = (long *)malloc(sizeof(long) * (argc + 1));
+	if (!num)
+		return (NULL);
 	i = 0;
 	while (argv[i])
 	{
-		num[i] = (int)ft_atol(argv[i]);
-		if (num[i] < INT_MIN || num[i] > INT_MAX)
+		num[i] = ft_atol(argv[i]);
+		if (num[i] > 2147483647 || num[i] < -2147483647)
 		{
 			error_message("Error");
-			exit(EXIT_FAILURE);
+			free(num);
+			return NULL;
 		}
 		i++;
 	}
 	num[i] = '\0';
-	temp = num;
-	return (temp);
+	return (num);
 }
 
 /* add the number given as arguments and to the stack */
 void	add_to_stack(t_stack **a, char **argv, int argc)
 {
 	int		i;
-	int	*nbrs;
+	long	*nbrs;
 
 	if (check_errors(argv))
 	{
 		error_message("Error");
-		exit(EXIT_FAILURE) ;
+		return ;
 	}
 	i = 0;
 	nbrs = get_numbers(argv, argc);
-	if (!is_sorted(nbrs))
+	if (!is_sorted(nbrs, argc) && nbrs)
 	{
 		while (i < argc)
 		{
@@ -100,4 +103,5 @@ void	add_to_stack(t_stack **a, char **argv, int argc)
 			i++;
 		}
 	}
+	free(nbrs);
 }

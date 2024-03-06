@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/04 11:34:38 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/05 23:53:52 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	main(int argc, char **argv);
 void	push_swap(t_stack **a, t_stack **b);
 void 	add_to_stack(t_stack **a, char **argv, int argc);
 void	add_node(t_stack **stack, int value);
-int	is_sorted(int *nbrs);
-int     *get_numbers(char **argv, int argc);
+int	is_sorted(long *nbrs, int argc);
+long     *get_numbers(char **argv, int argc);
 int	array_elements(char **argv);
 
 // error managements

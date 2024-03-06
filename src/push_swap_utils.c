@@ -6,25 +6,23 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:19:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/04 13:44:52 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/06 03:59:10 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/* check if array of INT given are sorted, if true return 1 */
-int	is_sorted(int *nbrs)
+/* check if array of numbers given are sorted, if true return 1 */
+int	is_sorted(long *nbrs, int argc)
 {
 	int	i;
-	int	*temp;
 
 	if (!nbrs)
-		return (0);
+		return (1);
 	i = 0;
-	temp = nbrs;
-	while (temp[i])
+	while (--argc)
 	{
-		if (temp[i] > nbrs[i + 1])
+		if (nbrs[i] > nbrs[i + 1])
 			return (0);
 		i++;
 	}
