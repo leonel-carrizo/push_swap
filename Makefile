@@ -6,7 +6,7 @@
 #    By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/23 11:13:45 by lcarrizo          #+#    #+#              #
-#    Updated: 2024/03/04 10:20:39 by lcarrizo         ###   ########.fr        #
+#    Updated: 2024/03/05 19:15:44 by lcarrizo          ###   ##london.com      #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,9 @@ $(OBJ_DIR)%.o:	$(SRC_DIR)%.c
 		@mkdir -p $(OBJ_DIR)
 		@echo Object Directory Created!
 		$(CC) $(CFLAGS) -c $< -o $@
+libft:		$(LIBFT)
+		@cp -r $(LIBFT) .
+		@echo "libft.a create"
 
 clean:		
 		$(RM) $(OBJ_DIR)
