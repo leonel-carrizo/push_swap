@@ -6,11 +6,21 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 21:29:51 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/02/28 12:38:24 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/03/07 13:25:54 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+/* print error message */
+void	error_message(const char *message)
+{
+	int	len;
+
+	len = ft_strlen(message);
+	write(2, message, len);
+	write(2, "\n", 1);
+}
 
 /* check if the arguments are not value number, if true return 1 otherwise 0 */
 static int	wrong_sintax(char **argv)
@@ -22,7 +32,7 @@ static int	wrong_sintax(char **argv)
 	while (argv[j])
 	{
 		if (!(*argv[j] == '-' || *argv[j] == '+'
-			|| (*argv[j] >= '0' && *argv[j] <= '9')))
+				|| (*argv[j] >= '0' && *argv[j] <= '9')))
 			return (1);
 		i = 0;
 		if (*argv[j] == '+' || *argv[j] == '-' )

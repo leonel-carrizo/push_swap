@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:56:19 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/06 04:37:39 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/03/07 13:20:32 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	add_node(t_stack **stack, int value)
 /* convert arg in INT into an array, check valid  numbers */
 long	*get_numbers(char **argv, int argc)
 {
-	int	i;
+	int		i;
 	long	*num;
 
 	num = NULL;
@@ -74,7 +74,7 @@ long	*get_numbers(char **argv, int argc)
 		{
 			error_message("Error");
 			free(num);
-			return NULL;
+			return (NULL);
 		}
 		i++;
 	}

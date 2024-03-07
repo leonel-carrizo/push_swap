@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:19:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/06 03:59:10 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/03/07 13:17:52 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,3 @@ int	array_elements(char **argv)
 	}
 	return (num);
 }
-
