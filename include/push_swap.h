@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/08 16:25:30 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/03/09 18:08:17 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ long     *get_numbers(char **argv, int argc);
 int	array_elements(char **argv);
 int	is_stack_sorted(t_stack *stack);
 void	clean_stack(t_stack **stack);
+t_stack	*find_last_element(t_stack *stack);
 // swap nodes
 void	sa(t_stack *a);
 void	sb(t_stack *b);
