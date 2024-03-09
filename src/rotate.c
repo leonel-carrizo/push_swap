@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 12:51:32 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/09 15:29:04 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/09 23:06:32 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,23 @@ The first element becomes the last one.
 */
 static void	rotate(t_stack **stack)
 {
-	if (!stack)
+	t_stack	*last_element;
+
+	if (!*stack || (*stcak)->next)
 		return ;
+	last_element = find_last_element(satck);
+	last_element->next = *stack;
+	*stack = (*stack)->next;
+	(*stack)->next = NULL;
+	last_element->next->prev = last_element;
+	last_element->next->next = NULL;
 
 }
 
 /*
 Shift up all elements of stack 'a' by 1.
 */
-void	ra(t_stack **stack)
+void	ra(t_stack **a)
 {
 	if (!stack)
 		return ;
@@ -40,5 +48,5 @@ void	rb(s_stack **b)
 {
 	if (!b)
 		return ;
-	ft_putstr_fd("rb\n", 1);
+	ft_putstr("rb\n");
 }

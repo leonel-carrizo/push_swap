@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:19:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/07 15:42:59 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/03/09 18:07:53 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,14 @@ int	array_elements(char **argv)
 		num++;
 	}
 	return (num);
+}
+
+/* return a pointer to the las element in the stack given */
+t_stack	*find_last_element(t_stack *stack)
+{
+	if (!stack)
+		return (NULL);
+	while ((*stack)->nect)
+		stack = (*stack)->next;
+	return (stack);
 }
