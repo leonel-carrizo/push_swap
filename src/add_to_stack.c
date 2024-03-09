@@ -6,28 +6,11 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:56:19 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/07 13:20:32 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/03/07 13:46:21 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-/* free all nodes from a stack given */
-void	clean_stack(t_stack **stack)
-{
-	t_stack	*temp;
-
-	if (!stack)
-		return ;
-	while (*stack)
-	{
-		temp = *stack;
-		temp = temp->next;
-		free(*stack);
-		*stack = NULL;
-		*stack = temp;
-	}
-}
 
 /* add a new node to the stack with the value given */
 void	add_node(t_stack **stack, int value)

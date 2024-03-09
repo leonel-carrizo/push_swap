@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 21:29:51 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/07 13:25:54 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/03/07 13:46:09 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,40 @@ void	error_message(const char *message)
 	len = ft_strlen(message);
 	write(2, message, len);
 	write(2, "\n", 1);
+}
+
+/* free all nodes from a stack given */
+void	clean_stack(t_stack **stack)
+{
+	t_stack	*temp;
+
+	if (!stack)
+		return ;
+	while (*stack)
+	{
+		temp = *stack;
+		temp = temp->next;
+		free(*stack);
+		*stack = NULL;
+		*stack = temp;
+	}
+}
+
+/* check if array of numbers given are sorted, if true return 1 */
+int	is_sorted(long *nbrs, int argc)
+{
+	int	i;
+
+	if (!nbrs)
+		return (1);
+	i = 0;
+	while (--argc)
+	{
+		if (nbrs[i] > nbrs[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 /* check if the arguments are not value number, if true return 1 otherwise 0 */
@@ -48,7 +82,7 @@ static int	wrong_sintax(char **argv)
 	return (0);
 }
 
-/* grap to check error in the arguments given to the program */
+/* check sintax error and if there are duplicated arguments */
 int	check_errors(char **argv)
 {
 	int	i;

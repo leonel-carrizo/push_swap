@@ -6,27 +6,37 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:19:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/07 13:17:52 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/03/07 15:42:59 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/* check if array of numbers given are sorted, if true return 1 */
-int	is_sorted(long *nbrs, int argc)
+/* check if the elements in the satck are sorted, return 1 if true */
+int	is_stack_sorted(t_stack *stack)
 {
-	int	i;
-
-	if (!nbrs)
+	if (!stack)
 		return (1);
-	i = 0;
-	while (--argc)
+	while (stack)
 	{
-		if (nbrs[i] > nbrs[i + 1])
+		if (stack->value > stack->next->value)
 			return (0);
-		i++;
+		stack = stack->next;
 	}
 	return (1);
+}
+
+void	print_stack(t_stack *stack)
+{
+	if (stack)
+	{
+		while (stack)
+		{
+			ft_putnbr_fd(stack->value, 1);
+			ft_putchar_fd('\n', 1);
+			stack = stack->next;
+		}
+	}
 }
 
 /* Check how many elements are in an array */
