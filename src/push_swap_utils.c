@@ -6,13 +6,13 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:19:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/09 18:07:53 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/03/20 21:04:56 by lcarrizo         ###    ##.london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/* check if the elements in the satck are sorted, return 1 if true */
+/* Check if the elements in the satck are sorted, return 1 if true */
 int	is_stack_sorted(t_stack *stack)
 {
 	if (!stack)
@@ -58,7 +58,7 @@ t_stack	*find_last_element(t_stack *stack)
 {
 	if (!stack)
 		return (NULL);
-	while ((*stack)->nect)
-		stack = (*stack)->next;
+	while (stack->next)
+		stack = stack->next;
 	return (stack);
 }

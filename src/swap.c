@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 12:18:34 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/08 18:06:51 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/03/20 19:44:30 by lcarrizo          ###   ##london.com     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ static void	swap(t_stack **stack)
 {
 	if (!stack || !(*stack)->next)
 	{
-		ft_putstr_fd("ERROR returning on 'swap'\n", 1);
+		ft_putstr("ERROR returning on 'swap'\n");
 		return ;
 	}
 	*stack = (*stack)->next;
-	(*stack)->prev->next = (*head)->next;
-	(*stack)->prev->prev = *head;
+	(*stack)->prev->next = (*stack)->next;
+	(*stack)->prev->prev = *stack;
 	if ((*stack)->next)
-		(*stack)->next->prev = (*head)->prev;
-	(*head)->next = (*head)->prev;
-	(*head)->prev = NULL
+		(*stack)->next->prev = (*stack)->prev;
+	(*stack)->next = (*stack)->prev;
+	(*stack)->prev = NULL;
 }
 
 /* swap two nodes on the top of the stack a */
@@ -38,7 +38,7 @@ void	sa(t_stack **a)
 		return ;
 	}
 	swap(a);
-	ft_putstr_fd("sa\n", 1);
+	ft_putstr("sa\n");
 }
 
 /* swap two nodes on the top of the stack b */

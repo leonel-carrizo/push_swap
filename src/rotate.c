@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 12:51:32 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/09 23:06:32 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/03/20 20:52:04 by lcarrizo         ###    ##.london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,14 @@ static void	rotate(t_stack **stack)
 {
 	t_stack	*last_element;
 
-	if (!*stack || (*stcak)->next)
+	if (!*stack || (*stack)->next)
 		return ;
-	last_element = find_last_element(satck);
+	last_element = find_last_element(*stack);
 	last_element->next = *stack;
 	*stack = (*stack)->next;
 	(*stack)->next = NULL;
 	last_element->next->prev = last_element;
 	last_element->next->next = NULL;
-
 }
 
 /*
@@ -36,17 +35,19 @@ Shift up all elements of stack 'a' by 1.
 */
 void	ra(t_stack **a)
 {
-	if (!stack)
+	if (!a)
 		return ;
+	rotate(a);
 	ft_putstr_fd("ra\n", 1);
 }
 
 /*
 Shift up all elements of stack 'b' by 1.
 */
-void	rb(s_stack **b)
+void	rb(t_stack **b)
 {
 	if (!b)
 		return ;
+	rotate(b);
 	ft_putstr("rb\n");
 }

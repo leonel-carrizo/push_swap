@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:56:19 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/07 13:46:21 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/03/20 20:52:29 by lcarrizo         ###    ##.london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ long	*get_numbers(char **argv, int argc)
 	return (num);
 }
 
-/* add the number given as arguments and to the stack */
+/* Add the number given as arguments and to the stack */
 void	add_to_stack(t_stack **a, char **argv, int argc)
 {
 	int		i;

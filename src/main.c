@@ -6,13 +6,13 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:59:42 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/07 15:55:41 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/03/20 20:58:18 by lcarrizo         ###    ##.london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/* frees an array that has been acllocated with the split functio */
+/* Frees an array that has been acllocated with the split functio */
 static void	free_array(char **argv)
 {
 	char	**temp;
