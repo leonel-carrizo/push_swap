@@ -6,25 +6,11 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:56:19 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/22 16:22:49 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/22 17:01:36 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-/* Check if the elements in the satck are sorted, return 1 if true */
-int	is_stack_sorted(t_stack *stack)
-{
-	if (!stack)
-		return (1);
-	while (stack)
-	{
-		if (stack->value > stack->next->value)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
-}
 
 /* add a new node to the stack with the value given */
 static void	add_node(t_stack **stack, int value)
@@ -77,6 +63,23 @@ static long	*get_numbers(char **argv, int argc)
 	}
 	num[i] = '\0';
 	return (num);
+}
+
+/* check if array of numbers given are sorted, if true return 1 */
+static int	is_sorted(long *nbrs, int argc)
+{
+	int	i;
+
+	if (!nbrs)
+		return (1);
+	i = 0;
+	while (--argc)
+	{
+		if (nbrs[i] > nbrs[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 /* Add the number given as arguments and to the stack */

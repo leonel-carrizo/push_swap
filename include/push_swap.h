@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/22 16:25:27 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/22 16:52:32 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ t_stack		*find_last_element(t_stack *stack);
 t_stack		*find_largest(t_stack *stack);
 int			main(int argc, char **argv);
 int			check_errors(char **argv);
-int			is_sorted(long *nbrs, int argc);
 int			is_stack_sorted(t_stack *stack);
 void		add_to_stack(t_stack **a, char **argv, int argc);
 void		clean_stack(t_stack **stack);

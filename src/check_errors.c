@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 21:29:51 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/22 16:24:59 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/22 16:52:18 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,23 +53,6 @@ static int	wrong_sintax(char **argv)
 		j++;
 	}
 	return (0);
-}
-
-/* check if array of numbers given are sorted, if true return 1 */
-int	is_sorted(long *nbrs, int argc)
-{
-	int	i;
-
-	if (!nbrs)
-		return (1);
-	i = 0;
-	while (--argc)
-	{
-		if (nbrs[i] > nbrs[i + 1])
-			return (0);
-		i++;
-	}
-	return (1);
 }
 
 /* print error message */

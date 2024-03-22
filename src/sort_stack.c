@@ -6,11 +6,27 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:20:47 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/22 14:33:25 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/22 17:01:27 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+
+/* Check if the elements in the satck are sorted, return 1 if true */
+int	is_stack_sorted(t_stack *stack)
+{
+	if (!stack)
+		return (1);
+	while (stack)
+	{
+		if (stack->value > stack->next->value)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
+}
+
 
 void	sort_three(t_stack **stack)
 {
