@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 12:11:43 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/21 13:04:35 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/22 14:29:37 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*last_element;
 
-	if (!*stack || (*stack)->next)
+	if (!*stack || !(*stack)->next)
 		return ;
 	last_element = find_last_element(*stack);
 	last_element->prev->next = NULL;

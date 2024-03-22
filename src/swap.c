@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 12:18:34 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/20 19:44:30 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/03/22 14:26:36 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,10 @@
 static void	swap(t_stack **stack)
 {
 	if (!stack || !(*stack)->next)
-	{
-		ft_putstr("ERROR returning on 'swap'\n");
 		return ;
-	}
 	*stack = (*stack)->next;
-	(*stack)->prev->next = (*stack)->next;
 	(*stack)->prev->prev = *stack;
+	(*stack)->prev->next = (*stack)->next;
 	if ((*stack)->next)
 		(*stack)->next->prev = (*stack)->prev;
 	(*stack)->next = (*stack)->prev;

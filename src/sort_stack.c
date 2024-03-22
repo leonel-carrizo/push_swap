@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:20:47 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/21 17:09:03 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/22 14:33:25 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	sort_three(t_stack **stack)
 		rra(stack);
 	if ((*stack)->value > (*stack)->next->value)
 		sa(stack);
-
 }
 
 void	sort_stack(t_stack **a, t_stack **b)
