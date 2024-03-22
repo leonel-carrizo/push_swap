@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:59:42 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/20 20:58:18 by lcarrizo         ###    ##.london.com    */
+/*   Updated: 2024/03/21 12:41:17 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ int	main(int argc, char *argv[])
 	else
 		push_swap(&a, &b, argc - 1);
 	clean_stack(&a);
+	// clean_stack(&b);
 	return (0);
 }

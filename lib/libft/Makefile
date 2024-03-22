@@ -6,7 +6,7 @@
 #    By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 03:19:48 by lcarrizo          #+#    #+#              #
-#    Updated: 2024/03/20 20:45:09 by lcarrizo         ###    ##.london.com     #
+#    Updated: 2024/03/21 17:15:49 by lcarrizo         ###    ###london.com     #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ SRC		= ft_putnbr_fd.c ft_atoi.c ft_bzero.c ft_calloc.c \
 		ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c \
 		ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
 		ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c \
-		ft_toupper.c ft_atol.c ft_strcmp.c ft_putstr.c
+		ft_toupper.c ft_atol.c ft_strcmp.c ft_putstr.c \
+		ft_putchar.c ft_putnbr.c
 OBJ_DIR		= obj/
 
 OBJ		= $(addprefix $(OBJ_DIR),$(notdir $(SRC:.c=.o)))

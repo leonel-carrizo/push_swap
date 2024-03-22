@@ -1,63 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/09 12:51:32 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/21 13:52:38 by lcarrizo         ###    ###london.com    */
+/*   Created: 2024/03/21 12:11:43 by lcarrizo          #+#    #+#             */
+/*   Updated: 2024/03/21 13:04:35 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 /*
-Shift up all elements of an stack by 1.
-The first element becomes the last one.
+Shift down all elements of stack given by 1.
+The last element becomes the first one.
 */
-static void	rotate(t_stack **stack)
+void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*last_element;
 
 	if (!*stack || (*stack)->next)
 		return ;
 	last_element = find_last_element(*stack);
+	last_element->prev->next = NULL;
 	last_element->next = *stack;
-	*stack = (*stack)->next;
-	(*stack)->next = NULL;
+	last_element->prev = NULL;
+	*stack = last_element;
 	last_element->next->prev = last_element;
-	last_element->next->next = NULL;
 }
 
-/*
-Shift up all elements of stack 'a' by 1.
-*/
-void	ra(t_stack **a)
+/* Shift down all elements of stack 'a' by 1 */
+void	rra(t_stack **a)
 {
-	if (!a)
-		return ;
-	rotate(a);
-	ft_putstr_fd("ra\n", 1);
+	reverse_rotate(a);
+	ft_putstr("rra\n");
 }
 
-/*
-Shift up all elements of stack 'b' by 1.
-*/
-void	rb(t_stack **b)
+/* Shift down all elements of stack 'b' by 1 */
+void	rrb(t_stack **b)
 {
-	if (!b)
-		return ;
-	rotate(b);
-	ft_putstr("rb\n");
+	reverse_rotate(b);
+	ft_putstr("rrb\n");
 }
 
-/*
-'ra' and 'rb' at the same time.
- */
-void	rr(t_stack **a, t_stack **b)
+/* rra and rrb at the same time. */
+void	rrr(t_stack **a, t_stack **b)
 {
-	rotate(a);
-	rotate(b);
-	ft_putstr("rr\n");
+	reverse_rotate(a);
+	reverse_rotate(b);
+	ft_putstr("rrr\n");
 }

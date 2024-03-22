@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/20 19:44:48 by lcarrizo          ###   ##london.com     */
+/*   Updated: 2024/03/21 17:01:20 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,39 +22,42 @@
 // create structs for staks a and b.
 typedef struct s_stack
 {
-	int		value;
-	int		elemts;
+	int				value;
+	int				elemts;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }			t_stack;
 
-
 // functions
-int	main(int argc, char **argv);
-void	push_swap(t_stack **a, t_stack **b, int argc);
-void 	add_to_stack(t_stack **a, char **argv, int argc);
-void	add_node(t_stack **stack, int value);
-int	is_sorted(long *nbrs, int argc);
-long     *get_numbers(char **argv, int argc);
-int	array_elements(char **argv);
-int	is_stack_sorted(t_stack *stack);
-void	clean_stack(t_stack **stack);
-t_stack	*find_last_element(t_stack *stack);
-// swap nodes
-void	sa(t_stack **a);
-void	sb(t_stack **b);
-void	sort_stack(t_stack **a, t_stack **b);
+t_stack		*find_last_element(t_stack *stack);
+t_stack		*find_largest(t_stack *stack);
+int			main(int argc, char **argv);
+int			check_errors(char **argv);
+int			is_sorted(long *nbrs, int argc);
+int			is_stack_sorted(t_stack *stack);
+int			array_elements(char **argv);
+long		*get_numbers(char **argv, int argc);
+void		add_to_stack(t_stack **a, char **argv, int argc);
+void		add_node(t_stack **stack, int value);
+void		clean_stack(t_stack **stack);
 
-// error managements
-void	error_message(const char *message);
-int	check_errors(char **argv);
-// stack lenght
-// how many elements in the stack
-// rotate nodes
-// push nodes stack to stack
+void		error_message(const char *message);
+void		push_swap(t_stack **a, t_stack **b, int argc);
+void		pa(t_stack **b, t_stack **a);
+void		pb(t_stack **a, t_stack **b);
+void		sa(t_stack **a);
+void		sb(t_stack **b);
+void		ra(t_stack **a);
+void		rb(t_stack **b);
+void		rr(t_stack **a, t_stack **b);
+void		rra(t_stack **a);
+void		rrb(t_stack **b);
+void		rrr(t_stack **a, t_stack **b);
+void		sort_three(t_stack **stack);
+void		sort_stack(t_stack **a, t_stack **b);
 
 //helpers
-void	print_stack(t_stack *stack);
-void	ft_printarg(char **argv);
+void		print_stack(t_stack *stack);
+void		ft_printarg(char **argv);
 
 #endif

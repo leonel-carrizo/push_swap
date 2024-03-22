@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:19:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/20 21:04:56 by lcarrizo         ###    ##.london.com    */
+/*   Updated: 2024/03/21 17:18:25 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ void	print_stack(t_stack *stack)
 {
 	if (stack)
 	{
+		ft_putstr("\n#--------- STACK A ----------#\n");
 		while (stack)
 		{
-			ft_putnbr_fd(stack->value, 1);
-			ft_putchar_fd('\n', 1);
+			ft_putnbr(stack->value);
+			ft_putchar('\n');
 			stack = stack->next;
 		}
 	}
@@ -61,4 +62,27 @@ t_stack	*find_last_element(t_stack *stack)
 	while (stack->next)
 		stack = stack->next;
 	return (stack);
+}
+
+/*
+Return a pointer to the largest  number in the stack given
+*/
+t_stack	*find_largest(t_stack *stack)
+{
+	long	max;
+	t_stack	*largest;
+
+	if (!stack)
+		return (NULL);
+	max = LONG_MIN;
+	while (stack)
+	{
+		if (stack->value > max)
+		{
+			max = stack->value;
+			largest = stack;
+		}
+		stack = stack->next;
+	}
+	return (largest);
 }
