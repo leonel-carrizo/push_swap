@@ -6,7 +6,7 @@
 #    By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/23 11:13:45 by lcarrizo          #+#    #+#              #
-#    Updated: 2024/03/21 12:06:54 by lcarrizo         ###    ###london.com     #
+#    Updated: 2024/03/22 16:06:11 by lcarrizo         ###    ###london.com     #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ NAME		= push_swap
 LIBFT		= ./lib/libft/libft.a
 LIBFT_DIR	= ./lib/libft/
 INCLUDE		= ./include/
+UTILS_SRC	= ./utils/
 SRC_DIR		= src/
 OBJ_DIR		= obj/
 SRCS		= $(wildcard $(SRC_DIR)*.c)
@@ -48,7 +49,7 @@ libft:		$(LIBFT)
 
 # create a program which can be debugged with gdb.
 debuggable:	$(LIBFT)
-		$(CC) $(CFLAGS) $(SRCS) $(LIBFT) -o push_swap -g
+		$(CC) $(CFLAGS) $(SRCS) $(wildcard $(UTILS_SRC)*c) $(LIBFT) -o push_swap -g
 
 clean:		
 		$(RM) $(OBJ_DIR)

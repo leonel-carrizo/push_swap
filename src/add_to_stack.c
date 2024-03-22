@@ -6,14 +6,28 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:56:19 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/21 17:28:17 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/22 16:22:49 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/* Check if the elements in the satck are sorted, return 1 if true */
+int	is_stack_sorted(t_stack *stack)
+{
+	if (!stack)
+		return (1);
+	while (stack)
+	{
+		if (stack->value > stack->next->value)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
+}
+
 /* add a new node to the stack with the value given */
-void	add_node(t_stack **stack, int value)
+static void	add_node(t_stack **stack, int value)
 {
 	t_stack	*new_node;
 	t_stack	*last_node;
@@ -40,7 +54,7 @@ void	add_node(t_stack **stack, int value)
 }
 
 /* convert arg in INT into an array, check valid  numbers */
-long	*get_numbers(char **argv, int argc)
+static long	*get_numbers(char **argv, int argc)
 {
 	int		i;
 	long	*num;

@@ -6,11 +6,25 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:59:42 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/21 12:41:17 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/22 16:23:55 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+/* Check how many elements are in an array */
+static int	array_elements(char **argv)
+{
+	int	num;
+
+	num = 0;
+	while (*argv)
+	{
+		argv++;
+		num++;
+	}
+	return (num);
+}
 
 /* Frees an array that has been acllocated with the split functio */
 static void	free_array(char **argv)

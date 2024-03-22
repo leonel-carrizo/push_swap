@@ -6,21 +6,11 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 21:29:51 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/20 20:58:04 by lcarrizo         ###    ##.london.com    */
+/*   Updated: 2024/03/22 16:24:59 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-/* print error message */
-void	error_message(const char *message)
-{
-	int	len;
-
-	len = ft_strlen(message);
-	write(2, message, len);
-	write(2, "\n", 1);
-}
 
 /* free all nodes from a stack given */
 void	clean_stack(t_stack **stack)
@@ -37,23 +27,6 @@ void	clean_stack(t_stack **stack)
 		*stack = NULL;
 		*stack = temp;
 	}
-}
-
-/* check if array of numbers given are sorted, if true return 1 */
-int	is_sorted(long *nbrs, int argc)
-{
-	int	i;
-
-	if (!nbrs)
-		return (1);
-	i = 0;
-	while (--argc)
-	{
-		if (nbrs[i] > nbrs[i + 1])
-			return (0);
-		i++;
-	}
-	return (1);
 }
 
 /* check if the arguments are not value number, if true return 1 otherwise 0 */
@@ -80,6 +53,33 @@ static int	wrong_sintax(char **argv)
 		j++;
 	}
 	return (0);
+}
+
+/* check if array of numbers given are sorted, if true return 1 */
+int	is_sorted(long *nbrs, int argc)
+{
+	int	i;
+
+	if (!nbrs)
+		return (1);
+	i = 0;
+	while (--argc)
+	{
+		if (nbrs[i] > nbrs[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+/* print error message */
+void	error_message(const char *message)
+{
+	int	len;
+
+	len = ft_strlen(message);
+	write(2, message, len);
+	write(2, "\n", 1);
 }
 
 /* check sintax error and if there are duplicated arguments */
