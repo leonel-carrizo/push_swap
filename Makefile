@@ -6,7 +6,7 @@
 #    By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/23 11:13:45 by lcarrizo          #+#    #+#              #
-#    Updated: 2024/03/20 21:21:02 by lcarrizo         ###    ###london.com     #
+#    Updated: 2024/03/21 12:06:54 by lcarrizo         ###    ###london.com     #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ libft:		$(LIBFT)
 		@echo "libft.a create"
 
 # create a program which can be debugged with gdb.
-testeable:	$(LIBFT)
+debuggable:	$(LIBFT)
 		$(CC) $(CFLAGS) $(SRCS) $(LIBFT) -o push_swap -g
 
 clean:		
