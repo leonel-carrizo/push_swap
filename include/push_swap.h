@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/22 16:52:32 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/24 17:49:05 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,11 @@
 typedef struct s_stack
 {
 	int				value;
-	int				elemts;
+	int				index;
+	int				n_movements;
+	int				is_above;
+	int				less_mov;
+	struct s_stack	*closet_value;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }			t_stack;
@@ -34,6 +38,7 @@ t_stack		*find_largest(t_stack *stack);
 int			main(int argc, char **argv);
 int			check_errors(char **argv);
 int			is_stack_sorted(t_stack *stack);
+int			stack_len(t_stack *stack);
 void		add_to_stack(t_stack **a, char **argv, int argc);
 void		clean_stack(t_stack **stack);
 
