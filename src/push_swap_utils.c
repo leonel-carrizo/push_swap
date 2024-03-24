@@ -6,11 +6,28 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:19:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/22 16:14:09 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/24 17:52:07 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+/* Return the lenght of the stack givem */
+int	stack_len(t_stack *stack)
+{
+	int	len;
+	
+	if (!stack)
+		return (0);
+	len = 0;
+	while (stack)
+	{
+		stack = stack->next;
+		len++;
+	}
+
+	return (len);
+}
 
 /* return a pointer to the las element in the stack given */
 t_stack	*find_last_element(t_stack *stack)
