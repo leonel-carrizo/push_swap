@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/24 17:49:05 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/26 12:56:33 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_stack
 {
 	int				value;
 	int				index;
-	int				n_movements;
+	int				n_moves;
 	int				is_above;
 	int				less_mov;
 	struct s_stack	*closet_value;

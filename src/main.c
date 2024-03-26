@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:59:42 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/22 16:23:55 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/24 17:49:43 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,7 @@ int	main(int argc, char *argv[])
 	if (!a)
 		exit(EXIT_FAILURE);
 	else
-		push_swap(&a, &b, argc - 1);
+		push_swap(&a, &b, stack_len(a));
 	clean_stack(&a);
-	// clean_stack(&b);
 	return (0);
 }

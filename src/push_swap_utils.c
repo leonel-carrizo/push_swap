@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:19:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/24 17:52:07 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/24 17:56:47 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	stack_len(t_stack *stack)
 {
 	int	len;
-	
+
 	if (!stack)
 		return (0);
 	len = 0;
@@ -25,7 +25,6 @@ int	stack_len(t_stack *stack)
 		stack = stack->next;
 		len++;
 	}
-
 	return (len);
 }
 

@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:00:16 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/26 12:13:29 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/26 13:43:03 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,61 @@ void	set_position(t_stack *stack)
 	}
 }
 
+/* Sests the closet value of the src_stack in dst_stack */
+void	set_closet_value(t_stack *src_stack, t_stack *dst_satck)
+{
+	t_stack	*posit_dts;
+	t_stack	*closet_node;
+	long	closet_index;
+
+	while (src_stack)
+	{
+		closet_index = LONG_MIN;
+		posit_b = dst_satck;
+		while (posit_dst)
+		{
+			if (posit_dst->value < src_stack->value
+				&& posit_dst->value > closet_index)
+			{
+				closet_index = posit_dst->value;
+				closet_node = posit_dst;
+			}
+			posit_dst = posit_dst->next;
+		}
+		if (closet_index == LONG_MIN)
+			src_stack->closet_value = find_largest(b);
+		else
+			src_stack->closet_value = closet_node;
+		src_stack = src_stack->next;
+	}
+}
+
+/* sets the number of moves to move a node from src_stack to dst_stack */
+void	set_n_movements(t_stack *src_stack, t_stack *dst_stack)
+{
+	int	len_a;
+	int	len_b;
+
+	len_a = stack_len(a);
+	len_b = stack_len(b);
+	while (src_stack)
+	{
+		src_stack->n_moves = src_stack->index;
+		if (src_stack->is_above == 0)
+			src_stack->n_moves = len_a - (src_stack->index);
+		if (src_stack->closet_value->is_above == 1)
+			src_stack->n_movse += src_stack->closet_value->index;
+		else
+			src_stack += len_b - (src_stack->closet_value->index);
+		src_stack = src_stack->next;
+	}
+}
+
 /* Inicializes the values in the node given as the firt argument */
 void	set_node_values(t_stack *a, t_stack *b)
 {
 	set_position(a);
+	set_position(b);
+	set_closet_value(a, b);
+	set_n_moves(a, b);
 }

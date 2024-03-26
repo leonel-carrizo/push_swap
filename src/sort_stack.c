@@ -6,12 +6,11 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:20:47 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/22 17:01:27 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/26 13:43:08 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
 
 /* Check if the elements in the satck are sorted, return 1 if true */
 int	is_stack_sorted(t_stack *stack)
@@ -26,7 +25,6 @@ int	is_stack_sorted(t_stack *stack)
 	}
 	return (1);
 }
-
 
 void	sort_three(t_stack **stack)
 {
@@ -45,6 +43,16 @@ void	sort_three(t_stack **stack)
 
 void	sort_stack(t_stack **a, t_stack **b)
 {
-	if (a || b)
-		ft_putstr("Soy la funcion sort_stack\n");
+	int	len;
+
+	len = stack_len(*a);
+
+	if (!is_stack_sorted(*a) && len-- > 3)
+		pb(a,b);
+	if (!is_stack_sorted(*a) && len-- > 3)
+		pb(a,b);
+	while (!is_stack_sorted(*a) && len-- > 3)
+	{
+		set_node_values(*a, *b);
+	}
 }
