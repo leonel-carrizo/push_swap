@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/26 21:09:42 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/26 22:42:10 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_stack
 // functions
 t_stack		*find_last_element(t_stack *stack);
 t_stack		*find_largest(t_stack *stack);
+t_stack		*get_less_move(t_stack *stack);
 int			main(int argc, char **argv);
 int			check_errors(char **argv);
 int			is_stack_sorted(t_stack *stack);
@@ -46,6 +47,8 @@ void		push_swap(t_stack **a, t_stack **b, int argc);
 void		sort_three(t_stack **stack);
 void		sort_stack(t_stack **a, t_stack **b);
 void		set_node_values(t_stack *a, t_stack *b);
+void		set_position(t_stack *stack);
+void		push_node(t_stack **src, t_stack **dst);
 
 void		pa(t_stack **b, t_stack **a);
 void		pb(t_stack **a, t_stack **b);

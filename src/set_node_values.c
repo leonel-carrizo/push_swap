@@ -6,11 +6,25 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:00:16 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/26 18:57:01 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/26 22:42:52 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+/* Return a pointer to a node which have less moves to be pushed to another stack*/
+t_stack	*get_less_move(t_stack *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack)
+	{
+		if (stack->less_mov)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
+}
 
 /* Sets whether the node position is below the middle of the stack */
 void	set_position(t_stack *stack)

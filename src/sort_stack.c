@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:20:47 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/26 20:02:22 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/26 22:45:09 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,14 @@ void	sort_stack(t_stack **a, t_stack **b)
 	while (!is_stack_sorted(*a) && len-- > 3)
 	{
 		set_node_values(*a, *b);
+		// mode to B;
 	}
+	sort_three(a);
+	while (*b)
+	{
+		set_node_values(*b, *a);
+		// move to A;
+	}
+	set_position(*a);
+	// set min on top;
 }
