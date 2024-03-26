@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:20:47 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/26 13:43:08 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/26 20:02:22 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	is_stack_sorted(t_stack *stack)
 {
 	if (!stack)
 		return (1);
-	while (stack)
+	while (stack->next)
 	{
 		if (stack->value > stack->next->value)
 			return (0);
@@ -46,11 +46,10 @@ void	sort_stack(t_stack **a, t_stack **b)
 	int	len;
 
 	len = stack_len(*a);
-
 	if (!is_stack_sorted(*a) && len-- > 3)
-		pb(a,b);
+		pb(a, b);
 	if (!is_stack_sorted(*a) && len-- > 3)
-		pb(a,b);
+		pb(a, b);
 	while (!is_stack_sorted(*a) && len-- > 3)
 	{
 		set_node_values(*a, *b);

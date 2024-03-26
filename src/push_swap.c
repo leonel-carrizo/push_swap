@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:10 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/24 17:54:59 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/26 21:11:16 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	push_swap(t_stack **a, t_stack **b, int argc)
 			sort_stack(a, b);
 	}
 	if (*a)
-		print_stack(*a);
+		print_stack(*a, "A");
 	if (*b)
-		print_stack(*b);
+		print_stack(*b, "B");
 }

@@ -6,19 +6,30 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:56:19 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/22 17:01:36 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/26 20:49:59 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+static t_stack	*find_last_node(t_stack *stack)
+{
+	t_stack	*last_node;
+
+	if (!stack)
+		return (NULL);
+	last_node = stack;
+	while (last_node->next)
+		last_node = last_node->next;
+	return (last_node);
+}
+
 /* add a new node to the stack with the value given */
 static void	add_node(t_stack **stack, int value)
 {
 	t_stack	*new_node;
-	t_stack	*last_node;
+	t_stack	*last;
 
-	last_node = *stack;
 	new_node = NULL;
 	new_node = (t_stack *)malloc(sizeof(t_stack));
 	if (!new_node)
@@ -32,10 +43,9 @@ static void	add_node(t_stack **stack, int value)
 	}
 	else
 	{
-		while (last_node->next)
-			last_node = last_node->next;
-		last_node->next = new_node;
-		new_node->prev = last_node;
+		last = find_last_node(*stack);
+		last->next = new_node;
+		new_node->prev = last;
 	}
 }
 
