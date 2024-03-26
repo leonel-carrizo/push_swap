@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/26 12:56:33 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/26 21:09:42 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,12 @@ int			is_stack_sorted(t_stack *stack);
 int			stack_len(t_stack *stack);
 void		add_to_stack(t_stack **a, char **argv, int argc);
 void		clean_stack(t_stack **stack);
-
 void		error_message(const char *message);
 void		push_swap(t_stack **a, t_stack **b, int argc);
+void		sort_three(t_stack **stack);
+void		sort_stack(t_stack **a, t_stack **b);
+void		set_node_values(t_stack *a, t_stack *b);
+
 void		pa(t_stack **b, t_stack **a);
 void		pb(t_stack **a, t_stack **b);
 void		sa(t_stack **a);
@@ -54,11 +57,9 @@ void		rr(t_stack **a, t_stack **b);
 void		rra(t_stack **a);
 void		rrb(t_stack **b);
 void		rrr(t_stack **a, t_stack **b);
-void		sort_three(t_stack **stack);
-void		sort_stack(t_stack **a, t_stack **b);
 
 //helpers
-void		print_stack(t_stack *stack);
+void		print_stack(t_stack *stack, char *name);
 void		ft_printarg(char **argv);
 
 #endif
