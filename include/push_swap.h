@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/26 22:42:10 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/27 21:15:08 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ void		sort_three(t_stack **stack);
 void		sort_stack(t_stack **a, t_stack **b);
 void		set_node_values(t_stack *a, t_stack *b);
 void		set_position(t_stack *stack);
-void		push_node(t_stack **src, t_stack **dst);
+void		set_close_value(t_stack *src_stack, t_stack *dst_stack);
+void		push_node(t_stack **src, t_stack **dst, t_stack *closet);
 
 void		pa(t_stack **b, t_stack **a);
 void		pb(t_stack **a, t_stack **b);
@@ -60,6 +61,8 @@ void		rr(t_stack **a, t_stack **b);
 void		rra(t_stack **a);
 void		rrb(t_stack **b);
 void		rrr(t_stack **a, t_stack **b);
+void		rotate_both(t_stack **a, t_stack **b, t_stack *closet);
+void		reverse_rotate_both(t_stack **a, t_stack **b, t_stack *closet);
 
 //helpers
 void		print_stack(t_stack *stack, char *name);

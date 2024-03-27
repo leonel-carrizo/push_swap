@@ -6,25 +6,25 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:19:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/26 22:44:59 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/27 21:19:29 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 /* Push the node on the top of src to the top of dst stack */
-void	push_node(t_stack **src, t_stack **dst)
+void	push_node(t_stack **src, t_stack **dst, t_stack *closet)
 {
 	t_stack	*less_mov;
 
-	less_mov = get_less_move(*a);
+	less_mov = get_less_move(*src);
 	if (less_mov->is_above == 1 && less_mov->closet_value->is_above == 1)
-		//rotate_both();
+		rotate_both(src, dst, closet);
 	else if (!(less_mov->is_above) && !(less_mov->closet_value->is_above))
-		//rev_rotate_both;
+		reverse_rotate_both(src, dst, closet);
 //	prep_for_push(a, less_mov, 'a');
 //	prep_for_push(b, less_movi->closet_value, 'b');
-	pb(b, a);
+	pb(src, dst);
 
 }
 
@@ -47,11 +47,14 @@ int	stack_len(t_stack *stack)
 /* return a pointer to the las element in the stack given */
 t_stack	*find_last_element(t_stack *stack)
 {
+	t_stack	*last;
+
+	last = stack;
 	if (!stack)
 		return (NULL);
-	while (stack->next)
-		stack = stack->next;
-	return (stack);
+	while (last->next)
+		last = last->next;
+	return (last);
 }
 
 /* Return a pointer to the largest  number in the stack given */

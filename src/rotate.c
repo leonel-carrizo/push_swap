@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 12:51:32 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/22 14:22:10 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/27 21:21:22 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@ static void	rotate(t_stack **stack)
 	last_element->next->next = NULL;
 }
 
-/*
-Shift up all elements of stack 'a' by 1.
-*/
+/* Shift up all elements of stack 'a' by 1. */
 void	ra(t_stack **a)
 {
 	if (!a)
@@ -41,9 +39,7 @@ void	ra(t_stack **a)
 	ft_putstr("ra\n");
 }
 
-/*
-Shift up all elements of stack 'b' by 1.
-*/
+/* Shift up all elements of stack 'b' by 1. */
 void	rb(t_stack **b)
 {
 	if (!b)
@@ -52,12 +48,19 @@ void	rb(t_stack **b)
 	ft_putstr("rb\n");
 }
 
-/*
-'ra' and 'rb' at the same time.
- */
+/* 'ra' and 'rb' at the same time.  */
 void	rr(t_stack **a, t_stack **b)
 {
 	rotate(a);
 	rotate(b);
 	ft_putstr("rr\n");
+}
+
+/* Rotate like rr but just the node which is closet_value to stack */
+void	rotate_both(t_stack **a, t_stack **b, t_stack *closet)
+{
+	while (*b != closet->closet_value && *a != closet)
+		rr(a, b);
+	set_position(*a);
+	set_position(*b);
 }

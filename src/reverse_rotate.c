@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 12:11:43 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/22 14:29:37 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/03/27 21:20:01 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,13 @@ void	rrr(t_stack **a, t_stack **b)
 	reverse_rotate(a);
 	reverse_rotate(b);
 	ft_putstr("rrr\n");
+}
+
+/* Rotate like rrr but just the node is the closet_value to the stack */
+void	reverse_rotate_both(t_stack **a, t_stack **b, t_stack *closet)
+{
+	while (*b != closet->closet_value && *a != closet)
+		rrr(a, b);
+	set_position(*a);
+	set_position(*b);
 }

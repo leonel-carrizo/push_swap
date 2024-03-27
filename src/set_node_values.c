@@ -6,25 +6,11 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:00:16 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/26 22:42:52 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/27 20:59:15 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-/* Return a pointer to a node which have less moves to be pushed to another stack*/
-t_stack	*get_less_move(t_stack *stack)
-{
-	if (!stack)
-		return (NULL);
-	while (stack)
-	{
-		if (stack->less_mov)
-			return (stack);
-		stack = stack->next;
-	}
-	return (NULL);
-}
 
 /* Sets whether the node position is below the middle of the stack */
 void	set_position(t_stack *stack)
@@ -98,6 +84,27 @@ void	set_num_moves(t_stack *src_stack, t_stack *dst_stack)
 	}
 }
 
+/* Set value 1 in an node which have the less moves to be pushed */
+void	set_less_mov(t_stack *stack)
+{
+	long	less_mov;
+	t_stack	*less_mov_node;
+
+	if (!stack)
+		return ;
+	less_mov = LONG_MAX;
+	while (stack)
+	{
+		if (stack->n_moves < less_mov)
+		{
+			less_mov = stack->n_moves;
+			less_mov_node = stack;
+		}
+		stack = stack->next;
+	}
+	less_mov_node->less_mov = 1;
+}
+
 /* Inicializes the values in the node given as the firt argument */
 void	set_node_values(t_stack *a, t_stack *b)
 {
@@ -105,4 +112,5 @@ void	set_node_values(t_stack *a, t_stack *b)
 	set_position(b);
 	set_closet_value(a, b);
 	set_num_moves(a, b);
+	set_less_mov(a);
 }
