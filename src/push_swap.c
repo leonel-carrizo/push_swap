@@ -6,13 +6,33 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:10 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/27 20:59:06 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/27 22:24:01 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/* Prepare node to push */
+/* position a node at the top of the stack to be push to stack named */
+void	set_node_position(t_stack **stack, t_stack *top_node, char name)
+{
+	while (*stack != top_node)
+	{
+		if (name == 'a')
+		{
+			if (top_node->is_above == 1)
+				ra(stack);
+			else
+				rra(stack);
+		}
+		else if (name == 'b')
+		{
+			if (top_node->is_above == 1)
+				rb(stack);
+			else
+				rrb(stack);
+		}
+	}
+}
 
 /* Return a pointer to a node which have less moves to be pushed */
 t_stack	*get_less_move(t_stack *stack)

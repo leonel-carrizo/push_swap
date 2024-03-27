@@ -6,26 +6,25 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:19:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/27 21:19:29 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/27 22:25:04 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 /* Push the node on the top of src to the top of dst stack */
-void	push_node(t_stack **src, t_stack **dst, t_stack *closet)
+void	push_node(t_stack **src, t_stack **dst)
 {
 	t_stack	*less_mov;
 
 	less_mov = get_less_move(*src);
 	if (less_mov->is_above == 1 && less_mov->closet_value->is_above == 1)
-		rotate_both(src, dst, closet);
+		rotate_both(src, dst, less_mov);
 	else if (!(less_mov->is_above) && !(less_mov->closet_value->is_above))
-		reverse_rotate_both(src, dst, closet);
-//	prep_for_push(a, less_mov, 'a');
-//	prep_for_push(b, less_movi->closet_value, 'b');
+		reverse_rotate_both(src, dst, less_mov);
+	set_node_position(src, less_mov, 'a');
+	set_node_position(dst, less_mov->closet_value, 'b');
 	pb(src, dst);
-
 }
 
 /* Return the lenght of the stack givem */

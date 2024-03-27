@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/27 21:15:08 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/27 22:23:15 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <limits.h>
 # include "../lib/libft/libft.h"
 
-// create structs for staks a and b.
+// structs for staks a and b.
 typedef struct s_stack
 {
 	int				value;
@@ -32,7 +32,7 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }			t_stack;
 
-// functions
+// general functions
 t_stack		*find_last_element(t_stack *stack);
 t_stack		*find_largest(t_stack *stack);
 t_stack		*get_less_move(t_stack *stack);
@@ -49,8 +49,10 @@ void		sort_stack(t_stack **a, t_stack **b);
 void		set_node_values(t_stack *a, t_stack *b);
 void		set_position(t_stack *stack);
 void		set_close_value(t_stack *src_stack, t_stack *dst_stack);
-void		push_node(t_stack **src, t_stack **dst, t_stack *closet);
+void		set_node_position(t_stack **stack, t_stack *top_node, char name);
+void		push_node(t_stack **src, t_stack **dst);
 
+// commands
 void		pa(t_stack **b, t_stack **a);
 void		pb(t_stack **a, t_stack **b);
 void		sa(t_stack **a);
@@ -64,7 +66,7 @@ void		rrr(t_stack **a, t_stack **b);
 void		rotate_both(t_stack **a, t_stack **b, t_stack *closet);
 void		reverse_rotate_both(t_stack **a, t_stack **b, t_stack *closet);
 
-//helpers
+// helpers/utils
 void		print_stack(t_stack *stack, char *name);
 void		ft_printarg(char **argv);
 
