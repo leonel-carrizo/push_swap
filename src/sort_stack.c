@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:20:47 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/27 22:16:10 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/28 13:33:10 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,27 +41,45 @@ void	sort_three(t_stack **stack)
 		sa(stack);
 }
 
+/* It sets the minimun number in the top of the stack A */
+static void	set_min_on_top(t_stack **a)
+{
+	while ((*a)->value != find_smallest(*a)->value)
+	{
+		if (find_smallest(*a)->is_above)
+			ra(a);
+		else
+			rra(a);
+	}
+}
+
 void	sort_stack(t_stack **a, t_stack **b)
 {
 	int	len;
 
 	len = stack_len(*a);
+	print_stack(*a, "A befor to push");
 	if (!is_stack_sorted(*a) && len-- > 3)
-		pb(a, b);
+		pb(b, a);
+	print_stack(*b, "B after 1 push");
 	if (!is_stack_sorted(*a) && len-- > 3)
-		pb(a, b);
+		pb(b, a);
+	print_stack(*b, "B after 2 push");
+	print_stack(*a, "A before sort 3");
 	while (!is_stack_sorted(*a) && len-- > 3)
 	{
-		set_node_values(*a, *b);
+		set_node_values(*a, *b, 'a');
 		push_node(a, b);
 	}
 	sort_three(a);
+	print_stack(*b, "B after sort 3");
+	print_stack(*a, "A after sort 3");
 	while (*b)
 	{
-		set_node_values(*b, *a);
+		set_node_values(*a, *b, 'b');
 		set_node_position(a, (*b)->closet_value, 'a');
 		pa(a, b);
 	}
 	set_position(*a);
-	// set min on top;
+	set_min_on_top(a);
 }

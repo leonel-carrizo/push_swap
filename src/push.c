@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 18:07:09 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/26 19:49:42 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/28 12:56:21 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,25 +41,25 @@ static void	push(t_stack **stack_src, t_stack **stack_dest)
 }
 
 /*
- * ake the first element at the top of b and put it at the top of 'a'.
+ * the first element at the top of 'b' and put it at the top of 'a'.
  * Do nothing if 'b' is empty.
 */
 void	pa(t_stack **b, t_stack **a)
 {
 	if (!b)
 		return ;
-	push(b, a);
+	push(a, b);
 	ft_putstr("pa\n");
 }
 
 /*
-* ake the first element at the top of 'a' and put it at the top of 'b'.
+* the first element at the top of 'a' and put it at the top of 'b'.
 * Do nothing if 'a' is empty.
 */
 void	pb(t_stack **a, t_stack **b)
 {
 	if (!a)
 		return ;
-	push(a, b);
+	push(b, a);
 	ft_putstr("pb\n");
 }

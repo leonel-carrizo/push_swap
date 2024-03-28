@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:19:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/27 22:25:04 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/28 13:30:42 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	push_node(t_stack **src, t_stack **dst)
 		reverse_rotate_both(src, dst, less_mov);
 	set_node_position(src, less_mov, 'a');
 	set_node_position(dst, less_mov->closet_value, 'b');
-	pb(src, dst);
+	pb(dst, src);
 }
 
 /* Return the lenght of the stack givem */
@@ -75,4 +75,25 @@ t_stack	*find_largest(t_stack *stack)
 		stack = stack->next;
 	}
 	return (largest);
+}
+
+/* Return a pointer to the smallest number in the stack given */
+t_stack	*find_smallest(t_stack *stack)
+{
+	long	min;
+	t_stack	*smallest;
+
+	if (!stack)
+		return (NULL);
+	min = LONG_MAX;
+	while (stack)
+	{
+		if (stack->value < min)
+		{
+			min = stack->value;
+			smallest = stack;
+		}
+		stack = stack->next;
+	}
+	return (smallest);
 }

@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:00:16 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/27 20:59:15 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/28 12:44:55 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	set_position(t_stack *stack)
 }
 
 /* Sests the closet value of the src_stack in dst_stack */
-void	set_closet_value(t_stack *src_stack, t_stack *dst_stack)
+void	set_closet_value(t_stack *src_stack, t_stack *dst_stack, long n)
 {
 	t_stack	*posit_dst;
 	t_stack	*closet_node;
@@ -43,7 +43,7 @@ void	set_closet_value(t_stack *src_stack, t_stack *dst_stack)
 
 	while (src_stack)
 	{
-		closet_index = LONG_MIN;
+		closet_index = n;
 		posit_dst = dst_stack;
 		while (posit_dst)
 		{
@@ -55,7 +55,7 @@ void	set_closet_value(t_stack *src_stack, t_stack *dst_stack)
 			}
 			posit_dst = posit_dst->next;
 		}
-		if (closet_index == LONG_MIN)
+		if (closet_index == n)
 			src_stack->closet_value = find_largest(dst_stack);
 		else
 			src_stack->closet_value = closet_node;
@@ -105,12 +105,21 @@ void	set_less_mov(t_stack *stack)
 	less_mov_node->less_mov = 1;
 }
 
-/* Inicializes the values in the node given as the firt argument */
-void	set_node_values(t_stack *a, t_stack *b)
+/* Inicializes the values in the node given  */
+void	set_node_values(t_stack *a, t_stack *b, char name)
 {
-	set_position(a);
-	set_position(b);
-	set_closet_value(a, b);
-	set_num_moves(a, b);
-	set_less_mov(a);
+	if (name == 'a')
+	{
+		set_position(a);
+		set_position(b);
+		set_closet_value(a, b, LONG_MIN);
+		set_num_moves(a, b);
+		set_less_mov(a);
+	}
+	else if (name == 'b')
+	{
+		set_position(a);
+		set_position(b);
+		set_closet_value(b, a, LONG_MAX);
+	}
 }

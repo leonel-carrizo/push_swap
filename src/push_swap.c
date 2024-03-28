@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:10 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/27 22:24:01 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/03/28 13:39:24 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,9 @@ void	push_swap(t_stack **a, t_stack **b, int argc)
 		else
 			sort_stack(a, b);
 	}
-	if (*a)
-		print_stack(*a, "A");
 	if (*b)
-		print_stack(*b, "B");
+		print_stack(*b, "FINAL B");
+	if (*a)
+		print_stack(*a, "FINAL A");
+	ft_putstr("VERIFICA LA FUNCION SET_CLOSET_VALUE!!!!");
 }
