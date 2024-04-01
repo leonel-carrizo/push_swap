@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:20:47 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/28 13:33:10 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/04/01 15:42:01 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,26 @@ int	is_stack_sorted(t_stack *stack)
 	return (1);
 }
 
-void	sort_three(t_stack **stack)
+/* Sets whether the node position is below the middle of the stack */
+void	set_position(t_stack *stack)
 {
-	t_stack	*largest;
+	int	i;
+	int	middle;
 
-	if (!*stack)
+	i = 0;
+	if (!stack)
 		return ;
-	largest = find_largest(*stack);
-	if (largest == *stack)
-		ra(stack);
-	else if ((*stack)->next == largest)
-		rra(stack);
-	if ((*stack)->value > (*stack)->next->value)
-		sa(stack);
+	middle = stack_len(stack) / 2;
+	while (stack)
+	{
+		stack->index = i;
+		if (i <= middle)
+			stack->is_above = 1;
+		else
+			stack->is_above = 0;
+		stack = stack->next;
+		i++;
+	}
 }
 
 /* It sets the minimun number in the top of the stack A */
@@ -58,26 +65,20 @@ void	sort_stack(t_stack **a, t_stack **b)
 	int	len;
 
 	len = stack_len(*a);
-	print_stack(*a, "A befor to push");
 	if (!is_stack_sorted(*a) && len-- > 3)
 		pb(b, a);
-	print_stack(*b, "B after 1 push");
 	if (!is_stack_sorted(*a) && len-- > 3)
 		pb(b, a);
-	print_stack(*b, "B after 2 push");
-	print_stack(*a, "A before sort 3");
 	while (!is_stack_sorted(*a) && len-- > 3)
 	{
 		set_node_values(*a, *b, 'a');
 		push_node(a, b);
 	}
 	sort_three(a);
-	print_stack(*b, "B after sort 3");
-	print_stack(*a, "A after sort 3");
 	while (*b)
 	{
 		set_node_values(*a, *b, 'b');
-		set_node_position(a, (*b)->closet_value, 'a');
+		set_node_on_top(a, (*b)->closet_value, 'a');
 		pa(a, b);
 	}
 	set_position(*a);

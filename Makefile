@@ -6,7 +6,7 @@
 #    By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/23 11:13:45 by lcarrizo          #+#    #+#              #
-#    Updated: 2024/03/22 16:06:11 by lcarrizo         ###    ###london.com     #
+#    Updated: 2024/04/01 15:50:00 by lcarrizo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(LIBFT):
 		@make -C $(LIBFT_DIR)
 
 $(NAME):	$(OBJ) $(LIBFT)
-		$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
+		$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(LIBFT) 
 
 $(OBJ_DIR)%.o:	$(SRC_DIR)%.c
 		@mkdir -p $(OBJ_DIR)

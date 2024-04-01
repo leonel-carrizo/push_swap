@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/28 12:44:11 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/04/01 15:10:51 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,7 @@ void		sort_three(t_stack **stack);
 void		sort_stack(t_stack **a, t_stack **b);
 void		set_node_values(t_stack *a, t_stack *b, char name);
 void		set_position(t_stack *stack);
-void		set_close_value(t_stack *src_stack, t_stack *dst_stack, long n);
-void		set_node_position(t_stack **stack, t_stack *top_node, char name);
+void		set_node_on_top(t_stack **stack, t_stack *top_node, char name);
 void		push_node(t_stack **src, t_stack **dst);
 
 // commands

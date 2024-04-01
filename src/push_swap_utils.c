@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:19:26 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/28 13:30:42 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/04/01 15:12:10 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	push_node(t_stack **src, t_stack **dst)
 		rotate_both(src, dst, less_mov);
 	else if (!(less_mov->is_above) && !(less_mov->closet_value->is_above))
 		reverse_rotate_both(src, dst, less_mov);
-	set_node_position(src, less_mov, 'a');
-	set_node_position(dst, less_mov->closet_value, 'b');
+	set_node_on_top(src, less_mov, 'a');
+	set_node_on_top(dst, less_mov->closet_value, 'b');
 	pb(dst, src);
 }
 

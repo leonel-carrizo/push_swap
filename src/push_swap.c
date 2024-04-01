@@ -6,14 +6,14 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:10 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/28 13:39:24 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/04/01 15:52:26 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 /* position a node at the top of the stack to be push to stack named */
-void	set_node_position(t_stack **stack, t_stack *top_node, char name)
+void	set_node_on_top(t_stack **stack, t_stack *top_node, char name)
 {
 	while (*stack != top_node)
 	{
@@ -48,6 +48,22 @@ t_stack	*get_less_move(t_stack *stack)
 	return (NULL);
 }
 
+/* Sorts the stack given when it have 3 elements */
+void	sort_three(t_stack **stack)
+{
+	t_stack	*largest;
+
+	if (!*stack)
+		return ;
+	largest = find_largest(*stack);
+	if (largest == *stack)
+		ra(stack);
+	else if ((*stack)->next == largest)
+		rra(stack);
+	if ((*stack)->value > (*stack)->next->value)
+		sa(stack);
+}
+
 /* to sort in ascending order numbers into stack 'a' */
 void	push_swap(t_stack **a, t_stack **b, int argc)
 {
@@ -60,9 +76,4 @@ void	push_swap(t_stack **a, t_stack **b, int argc)
 		else
 			sort_stack(a, b);
 	}
-	if (*b)
-		print_stack(*b, "FINAL B");
-	if (*a)
-		print_stack(*a, "FINAL A");
-	ft_putstr("VERIFICA LA FUNCION SET_CLOSET_VALUE!!!!");
 }
