@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 18:07:09 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/03/28 12:56:21 by lcarrizo         ###    ###london.com    */
+/*   Updated: 2024/04/01 21:49:31 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ static void	push(t_stack **stack_src, t_stack **stack_dest)
 	t_stack	*temp;
 
 	if (!stack_src)
-	{
-		ft_putstr("ERROR returning on 'push'\n");
 		return ;
-	}
 	temp = *stack_src;
 	*stack_src = (*stack_src)->next;
 	if (*stack_src)

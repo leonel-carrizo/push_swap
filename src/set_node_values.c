@@ -6,30 +6,30 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:00:16 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/04/01 15:30:55 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/04/01 18:58:52 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 /* sets the number of moves to move a node from src_stack to dst_stack */
-static void	set_num_moves(t_stack *src_stack, t_stack *dst_stack)
+static void	set_num_moves(t_stack *src, t_stack *dst)
 {
 	int	len_a;
 	int	len_b;
 
-	len_a = stack_len(src_stack);
-	len_b = stack_len(dst_stack);
-	while (src_stack)
+	len_a = stack_len(src);
+	len_b = stack_len(dst);
+	while (src)
 	{
-		src_stack->n_moves = src_stack->index;
-		if (src_stack->is_above == 0)
-			src_stack->n_moves = len_a - (src_stack->index);
-		if (src_stack->closet_value->is_above == 1)
-			src_stack->n_moves += src_stack->closet_value->index;
+		src->n_moves = src->index;
+		if (src->is_above == 0)
+			src->n_moves = len_a - (src->index);
+		if (src->closet_value->is_above == 1)
+			src->n_moves += src->closet_value->index;
 		else
-			src_stack += len_b - (src_stack->closet_value->index);
-		src_stack = src_stack->next;
+			src->n_moves += len_b - (src->closet_value->index);
+		src = src->next;
 	}
 }
 
@@ -115,18 +115,16 @@ static void	set_closet_value_a(t_stack *a, t_stack *b)
 /* Inicializes the values in the node given  */
 void	set_node_values(t_stack *a, t_stack *b, char name)
 {
-	if (name == 'a')
-	{
-		set_position(a);
-		set_position(b);
-		set_closet_value_a(a, b);
-		set_num_moves(a, b);
-		set_less_mov(a);
-	}
-	else if (name == 'b')
+	if (name == 'b')
 	{
 		set_position(a);
 		set_position(b);
 		set_closet_value_b(a, b);
+		return ;
 	}
+	set_position(a);
+	set_position(b);
+	set_closet_value_a(a, b);
+	set_num_moves(a, b);
+	set_less_mov(a);
 }

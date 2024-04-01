@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:47:10 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/04/01 15:52:26 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/04/01 21:52:38 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_stack	*get_less_move(t_stack *stack)
 		return (NULL);
 	while (stack)
 	{
-		if (stack->less_mov)
+		if (stack != NULL && stack->less_mov)
 			return (stack);
 		stack = stack->next;
 	}
@@ -76,4 +76,5 @@ void	push_swap(t_stack **a, t_stack **b, int argc)
 		else
 			sort_stack(a, b);
 	}
-}
+//	print_stack(*a, "A");
+
