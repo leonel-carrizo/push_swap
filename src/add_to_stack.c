@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:56:19 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/04/01 20:58:30 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/04/02 03:28:43 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	add_node(t_stack **stack, int value)
 		return ;
 	new_node->value = value;
 	new_node->next = NULL;
-	//new_node->less_mov = 0;
+	new_node->less_mov = 0;
 	if (!*stack)
 	{
 		*stack = new_node;

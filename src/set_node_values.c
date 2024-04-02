@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:00:16 by lcarrizo          #+#    #+#             */
-/*   Updated: 2024/04/01 18:58:52 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2024/04/02 03:12:34 by lcarrizo         ###    ###london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ static void	set_closet_value_b(t_stack *a, t_stack *b)
 			posit_a = posit_a->next;
 		}
 		if (closet_index == LONG_MAX)
-			b->closet_value = find_largest(a);
+			b->closet_value = find_smallest(a);
 		else
 			b->closet_value = closet_node;
 		b = b->next;
